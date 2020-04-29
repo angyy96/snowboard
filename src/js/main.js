@@ -1,12 +1,11 @@
 import 'owl.carousel';
-//import 'owl.carousel/dist/assets/owl.carousel.css';
-
 import 'sass/main.scss';
-import $ from 'jquery'
 
 import 'bootstrap/dist/css/bootstrap-reboot.min.css';
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
 import 'normalize.css/normalize.css';
+import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
+import '@fortawesome/fontawesome-free/css/solid.min.css';
 
 import 'img/icons/logo.svg';
 import 'img/products/board-1.png';
