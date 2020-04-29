@@ -29,9 +29,7 @@ const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
-  entry: {
-    main: ['./js/main.js']
-  },
+  entry: ['./js/main.js'],
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist'),
@@ -76,9 +74,11 @@ module.exports = {
         test: /\.(ico|woff|woff2|eot|ttf|gif|png|jpe?g|svg)$/,
         loader: `file-loader?name=/img/\.(bg|icons|posts|products|slider)$/./[ext]`,
         options: {
+          context: path.resolve(__dirname, 'src'),
           name: '[path][name].[ext]'
-        }
+        },
       },
+      
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -110,7 +110,6 @@ module.exports = {
       filename: filename('css')
     }),
     new CopyWebpackPlugin([
-      { from: 'node_modules/owl-carousel/src/img/owl.video.play.png', to: 'dist/img/' },
       { from: 'src/img/*', to: 'dist/img/' },
       { from: 'src/fonts/*', to: 'dist/fonts/' }
     ])
@@ -122,6 +121,5 @@ module.exports = {
     ],
     extensions: 
       ['.js', '.jsx','.css', '.scss', '.png']
-      //add '.css' "root": __dirname }
   }
 }
