@@ -1,0 +1,12 @@
+$owl-image-path: "~owl.carousel/src/img/";
+@import '~owl.carousel/src/scss/owl.carousel.scss';
+
+// Blocks 
+@import './blocks/fonts.scss';
+@import './blocks/header.scss';
+@import './blocks/base.scss';
+@import './blocks/slider.scss';
+@import './blocks/snowboards.scss';
+@import './blocks/description.scss';
+@import './blocks/features.scss';
+@import './blocks/footer.scss';
