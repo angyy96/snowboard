@@ -1,6 +1,12 @@
 $owl-image-path: "~owl.carousel/src/img/";
 @import '~owl.carousel/src/scss/owl.carousel.scss';
 
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
+@import "@fortawesome/fontawesome-free/scss/brands.scss";
+
+
 // Blocks 
 @import './blocks/fonts.scss';
 @import './blocks/header.scss';
