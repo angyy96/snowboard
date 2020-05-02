@@ -1,5 +1,16 @@
+// Import Owl-carousel
 $owl-image-path: "~owl.carousel/src/img/";
 @import '~owl.carousel/src/scss/owl.carousel.scss';
+
+// Import font-awesome
+$fa-font-path: '/fonts/@fortawesome';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+
+// Import bootstrap
+@import '~bootstrap/scss/bootstrap-reboot.scss';
+@import '~bootstrap/scss/bootstrap-grid.scss';
 
 // Blocks 
 @import './blocks/fonts.scss';

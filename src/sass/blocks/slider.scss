@@ -14,13 +14,13 @@
         align-items: center;
 
         &.slider__item--1 {
-            background-image: url('./../img/slider/slide-1.jpg');
+            background-image: url('/img/slider/slide-1.jpg');
             color: #000;
 
         }
 
         &.slider__item--2 {
-        background-image: url('./../img/slider/slide-2.jpg');
+        background-image: url('/img/slider/slide-2.jpg');
 
         }
     
@@ -52,7 +52,7 @@
             top: -200px;
             height: 380px;
             width: 395px;
-            background-image: url('./../img/slider/snowman.png');
+            background-image: url('/img/slider/snowman.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center ;
