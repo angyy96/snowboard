@@ -5,11 +5,31 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const fs = require('fs')
+
+function generateHtmlPlugins(templateDir) {
+  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+  return templateFiles.map(item => {
+    const parts = item.split('.');
+    const name = parts[0];
+    const extension = parts[1];
+    return new HtmlWebpackPlugin({
+      filename: `${name}.html`,
+      template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
+      minify: {
+        collapseWhitespace: true
+      }
+    })
+  })
+}
+
+const htmlPlugins = generateHtmlPlugins('./src/html/views');
+
 
 const config = {
   entry: ["./src/js/main.js", "./src/sass/main.scss"],
   output: {
-    filename: './js/[name].[hash].js',
+    filename: "./js/bundle.js",
     path: path.resolve(__dirname, 'dist')
   },
   devtool: "source-map",
@@ -67,14 +87,12 @@ const config = {
       }
     ]
   },
+  devServer: {
+    contentBase: path.join(__dirname, 'src'),
+    compress: true,
+    port: 8080
+  },
   plugins: [
-    new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: path.resolve(__dirname, "./src/index.html"),
-      minify: {
-        collapseWhitespace: true
-      }
-    }),
     new webpack.ProvidePlugin({ 
       $: "jquery",
       jQuery: "jquery",
@@ -85,10 +103,6 @@ const config = {
     }),
     new CopyWebpackPlugin([
       {
-        from: "./src/fonts",
-        to: "./fonts"
-      },
-      {
         from: "./src/img",
         to: "./img"
       },
@@ -96,9 +110,8 @@ const config = {
         from: "./node_modules/@fortawesome/fontawesome-free/webfonts/",
         to: "./fonts/@fortawesome"
       }
-
     ])
-  ]
+  ].concat(htmlPlugins)
 };
 
 module.exports = (env, argv) => {

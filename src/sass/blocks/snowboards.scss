@@ -3,6 +3,10 @@
     display: flex;
     flex-direction: column;
     align-items: center ;
+
+    width: 100%;
+
+    margin: 50px 0 200px 0;
 }
 
 .subtitle {
@@ -14,15 +18,15 @@
 }
 
 .slider-snowboards-holder {
-    width: 100%;
     overflow: hidden;
 
 }
 
 .slider-snowboards.owl-carousel {
-    width: 1110px;
-    padding-top: 117px;
+    width: 100vw;
+    margin-top: 117px;
     padding-bottom: 50px;
+
 }
 
 .slider-snowboards.owl-carousel .owl-stage-outer {
@@ -44,6 +48,8 @@
     opacity: 1 ;
 }
 
+// Carousel nav buttons 
+
 .slider-snowboards.owl-carousel .owl-nav .owl-next,
 .slider-snowboards.owl-carousel .owl-nav .owl-prev {
     color: #000000;
@@ -54,10 +60,12 @@
     background-repeat: no-repeat;
     background-position: center;  
     position: absolute;
-    top: 250px;
+    top: 50%;
+    transform: translateY(-50%);
     margin-top: -50px;
     margin-left: auto;
     margin-right: auto;
+    z-index: 1;
 
 }
 
@@ -75,25 +83,26 @@
 
 .slider-snowboards.owl-carousel .owl-nav .owl-next {
     background-image: url('/img/icons/next.svg');
-    right: -120px;
+    right: 0;
 }
 
 .slider-snowboards.owl-carousel .owl-nav .owl-prev {
     background-image: url('/img/icons/prev.svg');
-    left: -120px;
+    left: 0;
 }
 
 
 .caption {
     font-size: 24px;
-    font-family: 'Proxima Nova Bold', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     text-transform: uppercase;
     color: #000;
 
 }
 
 .slider-snowboards__item {
-    width: 370px;
+
     text-align: center;
 
     & img {

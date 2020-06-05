@@ -8,17 +8,24 @@ html {
 }
 
 body {
-    font-family: 'Proxima Nova Regular', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #fff;
+    font-weight: 400;
+
 }
 
 a:hover {
     text-decoration: none;
 }
 
+.page {
+    display: none;
+}
+
 .title-1 {
-    font-family: 'Proxima Nova Black', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 48px;
+    font-weight: 900;
     text-transform: uppercase;
     color: #000;
     margin: 0;
@@ -48,6 +55,6 @@ a:hover {
     color: #000;   
 }
 
-.container__snowboards {
-    margin-bottom: 200px;
+.main {
+    overflow: hidden;
 }

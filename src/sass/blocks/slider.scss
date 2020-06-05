@@ -2,12 +2,13 @@
 .slider {
     height: 760px;
     width: 100%;
+    z-index: 0;
 
     .slider__item {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        height: 760px;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -16,12 +17,10 @@
         &.slider__item--1 {
             background-image: url('/img/slider/slide-1.jpg');
             color: #000;
-
         }
 
         &.slider__item--2 {
-        background-image: url('/img/slider/slide-2.jpg');
-
+            background-image: url('/img/slider/slide-2.jpg');
         }
     
     }
@@ -30,34 +29,26 @@
 .slider__centered-content {
     display: flex;
     flex-direction: column;
-
+    position: relative;
 }
 
 
 
 .slider__title {
     font-size: 80px;
-    font-family: 'Proxima Nova Black', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
     text-transform: uppercase;
     margin-bottom: 60px; 
+}
 
-    &.slider__title--snowboardman {
-        position: relative;
-
-        &:after {
-            position: absolute;
-            display: block;
-            content: '';
-            right: -100px;
-            top: -200px;
-            height: 380px;
-            width: 395px;
-            background-image: url('/img/slider/snowman.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center ;
-        }
-    }
+.slider__title--snowboardman {
+    position: absolute;
+    display: block;
+    right: -100px;
+    top: -200px;
+    height: 380px;
+    width: 395px;  
 }
 
 .slider-button {
@@ -68,7 +59,8 @@
     line-height: 1;
     font-size: 14px;
     text-transform: uppercase;
-    font-family: 'Proxima Nova Bold', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     margin-left: auto;
     transition: all 0.2s ease-in;
     cursor: pointer;
@@ -79,3 +71,14 @@
     background-color: #333333;
 }
 
+.slider.owl-carousel {
+    height: fit-content;
+}
+
+.owl-carousel .owl-wrapper-outer {
+    width: 100%;
+}
+
+.owl-item {
+    width: 100%;
+}
